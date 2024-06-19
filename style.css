@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Cooper Black";
+  src: url("/fonts/cooper-black.otf");
+}
+
+body {
+  background-color: #d1ebf6;
+  font-family: "Cooper Black", serif;
+  text-align: center;
+}
+
+span {
+  color: #4cb4f0;
+  text-shadow: 3px 3px 2px #fefbba, -3px 3px 2px #fefbba, -3px -3px 0 #fefbba,
+    3px -3px 0 #fefbba;
+
+  /*  Font color and outline not supported on Internet Explorer 
+       Otherwise overrides above color and text-shadow outline */
+  @supports (-webkit-text-stroke: 2px #fefbba) {
+    -webkit-text-fill-color: #4cb4f0;
+    -webkit-text-stroke: 1px #fefbba;
+  }
+  font-size: 10vw;
+}
+
+/* Creates alternating colors */
+span > span {
+  color: #f6d4e3;
+
+  @supports (-webkit-text-stroke: 2px #fefbba) {
+    -webkit-text-fill-color: #f6d4e3;
+    -webkit-text-stroke: 1px #fefbba;
+  }
+}
