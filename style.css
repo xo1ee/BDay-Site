@@ -8,29 +8,31 @@
 }
 
 body {
+  background-color: #d1ebf6;
   font-family: "Cooper Black", serif;
   text-align: center;
-  background-color: #d1ebf6;
 }
 
+/* TITLE CONTAINER */
 #title-container {
   position: relative; /* Ensure positioning context for absolute positioning */
-  text-align: center; /* Center align for better display */
   display: flex;
+  height: 100vh;
   padding: 30px;
   font-family: Arial, sans-serif;
 }
 
+/* CLOUD ONE */
 .cloud1 {
-  margin-top: 5em;
   position: absolute;
+  margin-top: 5em;
   vertical-align: 25%;
   width: 350px;
   height: 120px;
-  background: #eceff1;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 100px;
   z-index: -1;
+  border-radius: 100px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  background: #f0f7fc;
 }
 
 .cloud1::after,
@@ -43,30 +45,31 @@ body {
 }
 
 .cloud1::after {
-  width: 100px;
-  height: 100px;
   top: -110px;
   left: -150px;
+  width: 100px;
+  height: 100px;
 }
 
 .cloud1::before {
-  width: 180px;
-  height: 180px;
   top: -70px;
   left: 100px;
+  width: 180px;
+  height: 180px;
 }
 
+/* CLOUD TWO */
 .cloud2 {
-  margin-top: 15em;
   position: absolute;
+  margin-top: 25em;
   vertical-align: 25%;
   right: 5%;
   width: 350px;
   height: 120px;
-  background: #eceff1;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 100px;
   z-index: -1;
+  border-radius: 100px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  background: #f0f7fc;
 }
 
 .cloud2::after,
@@ -79,25 +82,65 @@ body {
 }
 
 .cloud2::after {
+  top: -110px;
+  left: -150px;
+  width: 100px;
+  height: 100px;
+}
+
+.cloud2::before {
+  top: -70px;
+  left: 100px;
+  width: 180px;
+  height: 180px;
+}
+
+/* CLOUD THREE */
+.cloud3 {
+  position: absolute;
+  margin-top: 35em;
+  vertical-align: 25%;
+  right: 45%;
+  width: 350px;
+  height: 120px;
+  z-index: -1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  background: #f0f7fc;
+}
+
+.cloud3::after,
+.cloud3::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud3::after {
   width: 100px;
   height: 100px;
   top: -110px;
   left: -150px;
 }
 
-.cloud2::before {
+.cloud3::before {
   width: 180px;
   height: 180px;
   top: -70px;
   left: 100px;
 }
 
+/* TITLE TEXT */
 #title {
-  font-size: 10vw;
-  position: relative;
-  padding: 20px;
-  color: #4cb4f0;
+  position: absolute;
   display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  padding: 0.5em;
+  color: #4cb4f0;
+  font-size: 10vw;
   font-family: "Cooper Black", serif;
   text-align: center;
   text-shadow: 0.07em 0.07em 0 #fefbba, -0.07em 0.07em 0 #fefbba,
@@ -131,6 +174,7 @@ body {
   transform: rotate(-9deg); /* Alternate tilt angle */
 }
 
+/* IMAGES */
 img {
   max-width: 100%;
   max-height: 100%;
