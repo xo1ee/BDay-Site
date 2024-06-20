@@ -1,34 +1,111 @@
+/* #page-wrap {margin: 80px auto;} */
+
 @font-face {
   font-family: "Cooper Black";
-  src: url("/fonts/cooper-black.otf");
+  src: url("CooperFiveOpti-Black.otf");
+}
+
+:root {
+  --text-outline-size: .06em;
 }
 
 body {
-  background-color: #d1ebf6;
   font-family: "Cooper Black", serif;
   text-align: center;
+  background-color: #d1ebf6;
 }
 
-span {
-  color: #4cb4f0;
-  text-shadow: 3px 3px 2px #fefbba, -3px 3px 2px #fefbba, -3px -3px 0 #fefbba,
-    3px -3px 0 #fefbba;
+#title-container {
+  position: relative; /* Ensure positioning context for absolute positioning */
+  text-align: center; /* Center align for better display */
+  padding: 30px;
+  font-family: Arial, sans-serif;  
+  /* background: url('images/cloud.png') center/cover no-repeat; */
+}
 
-  /*  Font color and outline not supported on Internet Explorer 
-       Otherwise overrides above color and text-shadow outline */
-  @supports (-webkit-text-stroke: 2px #fefbba) {
-    -webkit-text-fill-color: #4cb4f0;
-    -webkit-text-stroke: 1px #fefbba;
+@media (max-width: 768px) {
+  #title-container {
+    font-size: 24px;
   }
+}
+
+.cloud {
+  position: absolute;
+  top: 25%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 100%;
+  height: 55%;
+  background: #ECEFF1;
+  border-radius: 100px;
+  box-shadow: 10px 10px #9cbecf;
+  /* z-index: -1;  */
+  /* Ensure the cloud is behind the title */
+}
+
+.cloud::after, .cloud::before{
+  content: "";
+  position: relative;
+  display: inline-block;
+  background:inherit;
+  border-radius:inherit;
+}
+
+.cloud::after{
+  width: 35%;
+  height: 30%;
+  top: -50%;
+  left: -40%;
+}
+
+.cloud::before{
+  width: 50%;
+  height: 65%;
+  top: -70px;
+  left: 25%;
+}
+
+#title {
   font-size: 10vw;
+  position: relative;
+  padding: 20px;
+  color: #4cb4f0;
+  display: inline-block;
+  font-family: "Cooper Black", serif;
+  text-align: center;
+  text-shadow:
+  .07em .07em 0 #fefbba,
+  -.07em .07em 0 #fefbba,
+  -.07em -.07em 0 #fefbba,
+  .07em -.07em 0 #fefbba,
+  -.07em 0 0 #fefbba,
+  .07em 0 0 #fefbba,
+  0 -.07em 0 #fefbba,
+  0 .07em 0 #fefbba;
 }
 
-/* Creates alternating colors */
-span > span {
-  color: #f6d4e3;
-
-  @supports (-webkit-text-stroke: 2px #fefbba) {
-    -webkit-text-fill-color: #f6d4e3;
-    -webkit-text-stroke: 1px #fefbba;
+@supports(-webkit-text-stroke: var(--text-outline-size) #fefbba) {
+  #title {
+    font-size: 10vw;
+    text-shadow: none;
+    -webkit-text-stroke: var(--text-outline-size) #fefbba;
   }
+}
+
+.color1 {
+  color: #4cb4f0;
+  -webkit-text-fill-color: #4cb4f0;
+}
+
+.color2 {
+  color: #f6d4e3;
+  -webkit-text-fill-color: #f6d4e3;
+}
+
+.tilted {
+  transform: rotate(9deg); /* Default tilt angle */
+  display: inline-block; /* Ensure inline-block for individual character spans */
+}
+.tilted:nth-child(even) {
+  transform: rotate(-9deg); /* Alternate tilt angle */
 }
