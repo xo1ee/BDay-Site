@@ -1,12 +1,10 @@
-/* #page-wrap {margin: 80px auto;} */
-
 @font-face {
   font-family: "Cooper Black";
   src: url("CooperFiveOpti-Black.otf");
 }
 
 :root {
-  --text-outline-size: .06em;
+  --text-outline-size: 0.06em;
 }
 
 body {
@@ -18,51 +16,80 @@ body {
 #title-container {
   position: relative; /* Ensure positioning context for absolute positioning */
   text-align: center; /* Center align for better display */
+  display: flex;
   padding: 30px;
-  font-family: Arial, sans-serif;  
-  /* background: url('images/cloud.png') center/cover no-repeat; */
+  font-family: Arial, sans-serif;
 }
 
-@media (max-width: 768px) {
-  #title-container {
-    font-size: 24px;
-  }
-}
-
-.cloud {
+.cloud1 {
+  margin-top: 5em;
   position: absolute;
-  top: 25%;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  width: 100%;
-  height: 55%;
-  background: #ECEFF1;
+  vertical-align: 25%;
+  width: 350px;
+  height: 120px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
   border-radius: 100px;
-  box-shadow: 10px 10px #9cbecf;
-  /* z-index: -1;  */
-  /* Ensure the cloud is behind the title */
+  z-index: -1;
 }
 
-.cloud::after, .cloud::before{
+.cloud1::after,
+.cloud1::before {
   content: "";
   position: relative;
   display: inline-block;
-  background:inherit;
-  border-radius:inherit;
+  background: inherit;
+  border-radius: inherit;
 }
 
-.cloud::after{
-  width: 35%;
-  height: 30%;
-  top: -50%;
-  left: -40%;
+.cloud1::after {
+  width: 100px;
+  height: 100px;
+  top: -110px;
+  left: -150px;
 }
 
-.cloud::before{
-  width: 50%;
-  height: 65%;
+.cloud1::before {
+  width: 180px;
+  height: 180px;
   top: -70px;
-  left: 25%;
+  left: 100px;
+}
+
+.cloud2 {
+  margin-top: 15em;
+  position: absolute;
+  vertical-align: 25%;
+  right: 5%;
+  width: 350px;
+  height: 120px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  z-index: -1;
+}
+
+.cloud2::after,
+.cloud2::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud2::after {
+  width: 100px;
+  height: 100px;
+  top: -110px;
+  left: -150px;
+}
+
+.cloud2::before {
+  width: 180px;
+  height: 180px;
+  top: -70px;
+  left: 100px;
 }
 
 #title {
@@ -73,18 +100,12 @@ body {
   display: inline-block;
   font-family: "Cooper Black", serif;
   text-align: center;
-  text-shadow:
-  .07em .07em 0 #fefbba,
-  -.07em .07em 0 #fefbba,
-  -.07em -.07em 0 #fefbba,
-  .07em -.07em 0 #fefbba,
-  -.07em 0 0 #fefbba,
-  .07em 0 0 #fefbba,
-  0 -.07em 0 #fefbba,
-  0 .07em 0 #fefbba;
+  text-shadow: 0.07em 0.07em 0 #fefbba, -0.07em 0.07em 0 #fefbba,
+    -0.07em -0.07em 0 #fefbba, 0.07em -0.07em 0 #fefbba, -0.07em 0 0 #fefbba,
+    0.07em 0 0 #fefbba, 0 -0.07em 0 #fefbba, 0 0.07em 0 #fefbba;
 }
 
-@supports(-webkit-text-stroke: var(--text-outline-size) #fefbba) {
+@supports (-webkit-text-stroke: var(--text-outline-size) #fefbba) {
   #title {
     font-size: 10vw;
     text-shadow: none;
