@@ -150,7 +150,7 @@ body {
 
 #fly {
   position: relative;
-  top: 300px;
+  top: 250px;
 }
 
 @supports (-webkit-text-stroke: var(--text-outline-size) #fefbba) {
