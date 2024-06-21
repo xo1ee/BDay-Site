@@ -148,6 +148,11 @@ body {
     0.07em 0 0 #fefbba, 0 -0.07em 0 #fefbba, 0 0.07em 0 #fefbba;
 }
 
+#fly {
+  position: relative;
+  top: 30%;
+}
+
 @supports (-webkit-text-stroke: var(--text-outline-size) #fefbba) {
   #title {
     font-size: 10vw;
